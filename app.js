@@ -8,7 +8,7 @@ require('./jobs/stockMonitor');
 const cors = require("cors");
 
 const CLIENT_PORT = process.env.CLIENT_PORT;
-app.use(cors({ origin: `https://stocx-tracker.vercel.app` }));
+app.use(cors({ origin: `http://34.235.157.206` }));
 
 
 mongoose.connect(process.env.MONGO_URI)
