@@ -8,7 +8,8 @@ require('./jobs/stockMonitor');
 const cors = require("cors");
 
 const CLIENT_PORT = process.env.CLIENT_PORT;
-app.use(cors({ origin: `http://34.235.157.206` }));
+// app.use(cors({ origin: `http://34.235.157.206` }));
+app.use(cors({ origin: `https://www.stocktracker.xyz` }));
 
 
 mongoose.connect(process.env.MONGO_URI)
