@@ -9,6 +9,7 @@ const cors = require("cors");
 
 const CLIENT_PORT = process.env.CLIENT_PORT;
 // app.use(cors({ origin: `http://34.235.157.206` }));
+app.use(cors({ origin: `http://www.stocktracker.xyz` }));
 app.use(cors({ origin: `https://www.stocktracker.xyz` }));
 
 
