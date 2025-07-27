@@ -10,7 +10,7 @@ const cors = require("cors");
 const CLIENT_PORT = process.env.CLIENT_PORT;
 // app.use(cors({ origin: `http://34.235.157.206` }));
 app.use(cors({
-  origin: ['http://www.stocktracker.xyz', 'https://www.stocktracker.xyz'],
+  origin: ['http://www.stocktracker.xyz', 'https://www.stocktracker.xyz', 'https://stocx-tracker.vercel.app', 'http://34.235.157.206'],
   credentials: false
 }));
 
