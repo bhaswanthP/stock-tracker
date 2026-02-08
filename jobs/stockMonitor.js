@@ -33,7 +33,7 @@ cron.schedule('*/1 * * * *', async () => {
               [Contact Information]`
           );`
           */
-          alert.status = 'notified';
+          alert.status = 'Notified';
           alert.lastNotifiedAt = new Date();
           console.log(`Mail sent to ${alert.email} regarding ${alert.symbol}`);
           await alert.save();
