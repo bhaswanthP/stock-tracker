@@ -6,7 +6,7 @@ const { sendEmail } = require('../services/emailService');
 cron.schedule('*/1 * * * *', async () => {
   try {
     console.log('cron job scheduler testing');
-    const alerts = await StockAlert.find({ status: 'active' });
+    const alerts = await StockAlert.find({ status: 'Active' });
     
     if (alerts.length == 0) {
       console.log('No alerts');
