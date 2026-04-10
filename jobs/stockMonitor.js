@@ -16,6 +16,7 @@ cron.schedule('*/1 * * * *', async () => {
         console.log(`${alert.symbol}: ${price}`);
         
         if (price >= alert.targetPrice) {
+          /*
           await sendEmail(
             alert.email, 
             `📈 Stock Alert: ${alert.symbol} has reached your target!`, 
@@ -35,6 +36,7 @@ cron.schedule('*/1 * * * *', async () => {
             Best Regards,
             Bhaswanth Polamarasetti`
           );
+          */
           
           alert.status = 'Notified';
           alert.lastNotifiedAt = new Date();
