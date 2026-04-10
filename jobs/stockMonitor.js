@@ -5,7 +5,6 @@ const { sendEmail } = require('../services/emailService');
 
 cron.schedule('*/1 * * * *', async () => {
   try {
-    console.log('cron job scheduler testing');
     const alerts = await StockAlert.find({ status: 'Active' });
     
     if (alerts.length == 0) {
@@ -17,7 +16,6 @@ cron.schedule('*/1 * * * *', async () => {
         console.log(`${alert.symbol}: ${price}`);
         
         if (price >= alert.targetPrice) {
-          /*
           await sendEmail(
             alert.email, 
             `📈 Stock Alert: Action Required for ${alert.symbol}!`, 
@@ -31,8 +29,7 @@ cron.schedule('*/1 * * * *', async () => {
               Best regards,\n
               [Your Company/Service Name]\n
               [Contact Information]`
-          );`
-          */
+          );
           alert.status = 'Notified';
           alert.lastNotifiedAt = new Date();
           console.log(`Mail sent to ${alert.email} regarding ${alert.symbol}`);
