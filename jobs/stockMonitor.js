@@ -1,3 +1,4 @@
+const https = require('https');
 const cron = require('node-cron');
 const StockAlert = require('../models/StockAlert');
 const { getStockPrice } = require('../services/stockService');
@@ -48,4 +49,19 @@ cron.schedule('*/1 * * * *', async () => {
   } catch (error) {
     console.error(`Error fetching stock price Cron Job Scheduler:  ${error}`)
   }
+});
+
+cron.schedule('*/15 * * * *', async () => {
+  https.get('https://stocx-tracker.onrender.com/api/alerts', (res) => {
+    let data = '';
+    res.on('data', (chunk) => {
+      data += chunk;
+    });
+  
+    res.on('end', () => {
+      console.log(JSON.parse(data));
+    });
+  }).on('error', (err) => {
+    console.error('Error:', err.message);
+  });
 });
