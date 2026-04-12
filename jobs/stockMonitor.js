@@ -52,7 +52,7 @@ cron.schedule('*/1 * * * *', async () => {
 });
 
 cron.schedule('*/15 * * * *', async () => {
-  https.get('https://stocx-tracker.onrender.com/api/alerts', (res) => {
+  https.get('https://stocx-tracker.onrender.com/api/alerts/AAPL', (res) => {
     let data = '';
     res.on('data', (chunk) => {
       data += chunk;
